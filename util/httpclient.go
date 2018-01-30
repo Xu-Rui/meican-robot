@@ -45,14 +45,14 @@ func PostJSON(urlstr string, data map[string]interface{}) ([]byte, error) {
 	return body, nil
 }
 
-func GetRequest(urlstr string, method string) (*gorequest.SuperAgent) {
+func GetRequest(urlstr string, method string) *gorequest.SuperAgent {
 
 	var request *gorequest.SuperAgent
 	switch method {
 	case "GET":
-		request = gorequest.New().Get("http://" + urlstr)
+		request = gorequest.New().Get("https://" + urlstr)
 	case "POST":
-		request = gorequest.New().Post("http://" + urlstr)
+		request = gorequest.New().Post("https://" + urlstr)
 	}
 
 	return request
